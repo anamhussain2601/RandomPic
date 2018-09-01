@@ -8,7 +8,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="center">
         <h1>Picture Gallery</h1>
         <ListPicture/>
       </div>

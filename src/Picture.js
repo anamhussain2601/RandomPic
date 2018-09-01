@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import './App.css';
 
 class Picture extends Component {
 
   render() {
     return (
-      <div style={{marginBottom:'15px'}}>
+      <div className="card">
         <div>
           <img src={this.props.picture.thumbnailUrl} />
         </div>

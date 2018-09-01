@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Picture from "./Picture";
 import Loading from "./Loading";
 import { getRandomTenPic } from "./Utils";
+import GuttersGrid from './Pictures';
+import Button from '@material-ui/core/Button';
 
 class ListPicture extends Component {
   constructor(props) {
@@ -31,19 +33,15 @@ class ListPicture extends Component {
     console.log(this.state.randomTenPic);
     return (
       <div>
-        <button
-          style={{ marginBottom: "20px", backgroundColor:'#173dd5', color:'white', height: '40px'}}
-          onClick={() => {
-            this.getMorePic(this.state.pictures);
-          }}
-        >
-         Click Me!!
-        </button>
+        <div style={{marginBottom:"10px"}}>
+        <Button variant="outlined" onClick={() => {this.getMorePic(this.state.pictures);}}>Click Me!</Button>
+        </div>
         {this.state.pictures.length ? (
           <div>
             {this.state.randomTenPic.map((picture, index) => {
-              return <Picture picture={picture} />;
+              return <div style={{marginBottom:"10px"}}><GuttersGrid picture={picture}/></div>;
             })}
+            <GuttersGrid/>
           </div>
         ) : (
           <div>
